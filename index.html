@@ -13,49 +13,36 @@
         const siteExclusiveIdentifier = '[site exclusive]';
         const siteExclusivesOnly = false;
 
-        const merged = quotes.concat(siteExclusiveQuotes.map(str => str + siteExclusiveIdentifier));
 
         function quoteMe() {
-
-            let quotes = siteExclusivesOnly ? merged.filter(str => str.includes(siteExclusiveIdentifier)) : merged;
-
             let quote = quotes[Math.floor(Math.random() * quotes.length)];
-
-            if (quote.includes(siteExclusiveIdentifier)) {
-                console.log("exclusive quote")
-                quote = quote.replace(siteExclusiveIdentifier, '');
-                document.getElementById("exclusive").style.visibility = "visible";
-            } else {
-                document.getElementById("exclusive").style.visibility = "hidden";
-            }
             document.getElementById("quoteText").innerHTML = quote;
         }
 
         // Wide Hayden Passcode
-        // Gone change this to the konami code
-        let pass = '';
-        const passcode = "wide";
-        let audio = new Audio('audio/WIDE.wav');
-        document.addEventListener('keydown', function (event) {
-            pass += event.key;
-            if (pass == passcode) {
-                audio.play();
-                document.getElementById("hayden").style.width = "1500px";
-                document.getElementById("hayden").style.transition = "width 2s ease";
-                pass = ''
-                // console.log("widness")
-            }
-            if (pass.length >= passcode.length) {
-                pass = '';
-                // console.log("nuh uh")
-            }
-        });
+        // let pass = '';
+        // const passcode = "wide";
+        // let audio = new Audio('audio/WIDE.wav');
+        // document.addEventListener('keydown', function (event) {
+        //     pass += event.key;
+        //     if (pass == passcode) {
+        //         audio.play();
+        //         document.getElementById("hayden").style.width = "1500px";
+        //         document.getElementById("hayden").style.transition = "width 2s ease";
+        //         pass = ''
+        //         // console.log("widness")
+        //     }
+        //     if (pass.length >= passcode.length) {
+        //         pass = '';
+        //         // console.log("nuh uh")
+        //     }
+        // });
     </script>
 </head>
 
 <body>
     <div>
-        <h1>Wise Words of Hayden Parker Frobenius</h1>
+        <h1>Wise Words of God</h1>
     </div>
     <img src="img\hayden.jpg" alt="hayd" id="hayden">
     <div id="quoteBox">
