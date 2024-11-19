@@ -15,7 +15,18 @@
 
 
         function quoteMe() {
+
+            let quotes = siteExclusivesOnly ? merged.filter(str => str.includes(siteExclusiveIdentifier)) : merged;
+
             let quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+            if (quote.includes(siteExclusiveIdentifier)) {
+                console.log("exclusive quote")
+                quote = quote.replace(siteExclusiveIdentifier, '');
+                document.getElementById("exclusive").style.visibility = "visible";
+            } else {
+                document.getElementById("exclusive").style.visibility = "hidden";
+            }
             document.getElementById("quoteText").innerHTML = quote;
         }
 
